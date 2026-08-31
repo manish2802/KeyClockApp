@@ -32,4 +32,4 @@ jobs:
         run: docker build -t manish28/keyclock_app:latest .
 
       - name: Push Docker image
-        run: docker push manish28/KeyClock_App:latest
+        run: docker push manish28/keyclock_app:latest
