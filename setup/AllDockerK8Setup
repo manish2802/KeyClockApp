@@ -11,3 +11,9 @@ docker run -d \
   -e JAVA_OPTS_APPEND="-Xms256m -Xmx512m" \
   quay.io/keycloak/keycloak:26.3.3 \
   start-dev
+  
+    docker run -d \
+  --name keyclock-app \
+  --network  keyclock-network \
+  -p 8081:8081 \
+  manish28/keyclock_app:latest
