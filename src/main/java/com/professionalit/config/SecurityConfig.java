@@ -14,14 +14,11 @@ public class SecurityConfig {
 	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
-		http
-				.csrf(csrf -> csrf.disable())
-				.authorizeHttpRequests(auth -> auth
-						.requestMatchers("/public").permitAll()
-						.requestMatchers("/user/**").hasAnyRole("USER", "ADMIN")
-						.requestMatchers("/admin/**").hasRole("ADMIN")
-						.anyRequest().authenticated()
-				)
+		http.csrf(csrf -> csrf.disable())
+				.authorizeHttpRequests(auth -> auth.requestMatchers("/public").permitAll()
+						.requestMatchers("/", "/index.html", "/assets/**", "/*.js", "/*.css").permitAll()
+						.requestMatchers("/user/**").hasAnyRole("USER", "ADMIN").requestMatchers("/admin/**")
+						.hasRole("ADMIN").anyRequest().authenticated())
 
 				.oauth2ResourceServer(oauth -> oauth.jwt(Customizer.withDefaults())).oauth2ResourceServer(
 						oauth -> oauth.jwt(jwt -> jwt.jwtAuthenticationConverter(new JwtAuthConverter())));
