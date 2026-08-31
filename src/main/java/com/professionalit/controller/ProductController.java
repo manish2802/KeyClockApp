@@ -19,7 +19,6 @@ public class ProductController {
 	public String products(@AuthenticationPrincipal Jwt jwt) {
 		return "Hello "
 				+ jwt.getClaimAsString("preferred_username");
-
 	}
 
 	@GetMapping("/admin/dashboard")
