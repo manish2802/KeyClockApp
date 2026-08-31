@@ -6,4 +6,4 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: https://ed60dfc9cf60-10-244-5-13-8080.spca.r.killercoda.com:8080/realms/stock
+          issuer-uri: https://keycloak:8080/realms/stock

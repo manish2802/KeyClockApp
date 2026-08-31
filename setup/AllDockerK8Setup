@@ -7,7 +7,7 @@ docker run -d \
   -e KC_BOOTSTRAP_ADMIN_USERNAME=admin \
   -e KC_BOOTSTRAP_ADMIN_PASSWORD=admin \
   -e KC_PROXY_HEADERS=xforwarded \
-  -e KC_HOSTNAME="https://ed60dfc9cf60-10-244-5-13-8080.spca.r.killercoda.com" \
+  -e KC_HOSTNAME="https://3bf49389da4d-10-244-4-7-8080.spca.r.killercoda.com/" \
   -e JAVA_OPTS_APPEND="-Xms256m -Xmx512m" \
   quay.io/keycloak/keycloak:26.3.3 \
   start-dev
