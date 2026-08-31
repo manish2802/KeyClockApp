@@ -7,4 +7,4 @@ COPY target/*.jar keyclock.jar
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-javaagent:/app/opentelemetry-javaagent.jar", "-jar","keyclock.jar"]
+ENTRYPOINT ["java", "-jar","keyclock.jar"]
